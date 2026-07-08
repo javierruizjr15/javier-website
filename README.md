@@ -26,6 +26,14 @@ pnpm build
 
 The production output is generated in `dist/`.
 
+## Production Server
+
+```bash
+pnpm start
+```
+
+The production server serves the built `dist/` directory and reads Heroku's `PORT` environment variable.
+
 ## Project Structure
 
 - `src/App.jsx` - portfolio content and page structure
@@ -36,3 +44,13 @@ The production output is generated in `dist/`.
 ## Contact Flow
 
 The primary contact buttons use a `mailto:` link and also copy the email address to the clipboard when possible. This gives visitors a visible fallback even if their browser does not open a default mail app.
+
+## Heroku Deployment
+
+```bash
+heroku create <app-name>
+git push heroku main
+heroku domains:add www.deltacores.dev
+```
+
+After adding the custom domain, point the `www` CNAME record in Squarespace Domains to the DNS target returned by Heroku.
