@@ -8,6 +8,8 @@ const port = Number(process.env.PORT || 4173);
 const host = process.env.HOST || "0.0.0.0";
 const root = fileURLToPath(new URL("./dist", import.meta.url));
 const indexFile = join(root, "index.html");
+const canonicalHost = "deltacores.dev";
+const redirectHosts = new Set(["www.deltacores.dev"]);
 
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
@@ -49,6 +51,15 @@ const sendFile = async (response, filePath) => {
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url || "/", `http://${request.headers.host}`);
+
+    if (redirectHosts.has(url.hostname)) {
+      response.writeHead(301, {
+        Location: `https://${canonicalHost}${url.pathname}${url.search}`,
+      });
+      response.end();
+      return;
+    }
+
     const pathname = url.pathname === "/" ? "/index.html" : url.pathname;
     const filePath = safeJoin(pathname);
 

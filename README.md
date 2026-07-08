@@ -50,7 +50,13 @@ The primary contact buttons use a `mailto:` link and also copy the email address
 ```bash
 heroku create <app-name>
 git push heroku main
+heroku domains:add deltacores.dev
 heroku domains:add www.deltacores.dev
 ```
 
-After adding the custom domain, point the `www` CNAME record in Squarespace Domains to the DNS target returned by Heroku.
+The canonical production URL is `https://deltacores.dev/`. The `www` hostname is also attached to Heroku and redirects to the apex domain.
+
+After adding the custom domains, point each Squarespace Domains DNS record to the DNS target returned by Heroku:
+
+- `deltacores.dev` -> Heroku DNS target for the apex domain
+- `www.deltacores.dev` -> Heroku DNS target for the `www` domain
