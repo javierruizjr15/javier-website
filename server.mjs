@@ -8,8 +8,8 @@ const port = Number(process.env.PORT || 4173);
 const host = process.env.HOST || "0.0.0.0";
 const root = fileURLToPath(new URL("./dist", import.meta.url));
 const indexFile = join(root, "index.html");
-const canonicalHost = "deltacores.dev";
-const redirectHosts = new Set(["www.deltacores.dev"]);
+const canonicalHost = "www.deltacores.dev";
+const redirectHosts = new Set(["deltacores.dev"]);
 
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
