@@ -390,6 +390,7 @@ h3 {
 .section {
   padding: 96px 5vw;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 92px;
 }
 
 .section-heading {
@@ -667,6 +668,7 @@ h3 {
   gap: 32px;
   align-items: center;
   padding: 88px 5vw;
+  scroll-margin-top: 92px;
 }
 
 .contact-band h2 {
@@ -769,10 +771,15 @@ h3 {
 
 @media (max-width: 760px) {
   .site-header {
-    position: sticky;
+    position: fixed;
+    inset: 0 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
     width: 100%;
     max-width: 100vw;
-    padding: 12px 36px 12px 18px;
+    padding: 10px 14px 12px;
+    background: rgba(7, 17, 17, 0.9);
   }
 
   .brand {
@@ -780,28 +787,50 @@ h3 {
   }
 
   .site-nav {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .brand small {
     display: none;
   }
 
-  .brand small,
-  .site-nav a:not(.nav-cta) {
-    display: none;
+  .site-nav a {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 36px;
+    justify-content: center;
+    padding: 0 4px;
+    border: 1px solid rgba(238, 247, 244, 0.1);
+    background: rgba(238, 247, 244, 0.04);
+    font-size: 0.72rem;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .site-nav .nav-cta {
-    padding: 0 10px;
+    padding: 0 4px;
   }
 
   .hero {
     min-height: 84svh;
     max-width: 100vw;
-    padding: 62px 36px 270px 18px;
+    justify-items: center;
+    padding: 146px 18px 270px;
+  }
+
+  .section,
+  .contact-band {
+    scroll-margin-top: 126px;
   }
 
   .hero-inner {
     width: 100%;
     max-width: 340px;
     gap: 18px;
+    margin-inline: auto;
   }
 
   .hero-content,
@@ -809,6 +838,7 @@ h3 {
   .hero-copy {
     width: 100%;
     max-width: 340px;
+    margin-inline: auto;
   }
 
   .hero-profile {
@@ -816,6 +846,7 @@ h3 {
     grid-template-columns: 96px minmax(0, 1fr);
     width: 100%;
     max-width: 340px;
+    margin-inline: auto;
   }
 
   .profile-photo {
@@ -863,11 +894,12 @@ h3 {
   }
 
   .hero-metrics {
-    left: 18px;
-    right: 36px;
-    width: calc(100% - 54px);
+    left: 50%;
+    right: auto;
+    width: min(340px, calc(100% - 36px));
     max-width: 340px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    transform: translateX(-50%);
   }
 
   .hero-metric {
@@ -885,7 +917,7 @@ h3 {
 
   .section,
   .contact-band {
-    padding: 72px 36px 72px 18px;
+    padding: 72px 18px;
   }
 
   .intro-copy {
@@ -912,11 +944,11 @@ h3 {
   }
 
   .site-footer {
-    padding: 24px 36px 24px 18px;
+    padding: 24px 18px;
   }
 
   .contact-toast {
-    right: 36px;
+    right: 18px;
     bottom: 18px;
     left: 18px;
     max-width: none;
@@ -924,10 +956,6 @@ h3 {
 }
 
 @media (max-width: 430px) {
-  .site-nav {
-    display: none;
-  }
-
   .brand strong {
     font-size: 0.88rem;
   }
@@ -939,8 +967,8 @@ h3 {
   }
 
   .site-nav .nav-cta {
-    font-size: 0;
-    width: 40px;
+    font-size: 0.72rem;
+    width: auto;
     justify-content: center;
   }
 

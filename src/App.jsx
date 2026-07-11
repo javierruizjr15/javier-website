@@ -240,7 +240,7 @@ function App() {
               <div className="hero-actions" aria-label="Contact links">
                 <a className="button button-primary" href={emailHref} onClick={handleEmailClick}>
                   <Mail aria-hidden="true" />
-                  Hire Javier
+                  Contact Javier
                   <ArrowRight aria-hidden="true" />
                 </a>
                 <a
