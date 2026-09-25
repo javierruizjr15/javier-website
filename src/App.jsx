@@ -8,21 +8,19 @@ import {
   Database,
   ExternalLink,
   Gauge,
-  GitBranch,
   Mail,
-  Map,
   MapPin,
   Network,
   Radio,
-  Rocket,
   Server,
   ShieldCheck,
   Terminal,
   Users,
+  Zap,
 } from "lucide-react";
 
 const metrics = [
-  { value: "7+", label: "years building production systems" },
+  { value: "8+", label: "years across software, electrical, and telecom systems" },
   { value: "4", label: "engineers led across platform work" },
   { value: "500k+", label: "embedded systems validated annually" },
   { value: "15", label: "technicians led in manufacturing ops" },
@@ -30,28 +28,28 @@ const metrics = [
 
 const focusAreas = [
   {
-    icon: Server,
-    title: "Operator platforms",
+    icon: Zap,
+    title: "Electrical and test engineering",
     copy:
-      "React and TypeScript tooling for telecom operators, deployment visibility, venue management, and day-to-day infrastructure operations.",
+      "Hands-on validation and fault isolation across DC, single-phase AC, three-phase power, sensors, embedded systems, and residential electrical work.",
   },
   {
-    icon: GitBranch,
-    title: "Backend workflows",
+    icon: Server,
+    title: "Software platforms",
     copy:
-      "Node.js microservice APIs for device onboarding, authentication, venue workflows, and reliable operational handoffs.",
+      "React and TypeScript operator consoles, internal tools, analytics dashboards, and Node.js microservices that support real-world operations.",
+  },
+  {
+    icon: Radio,
+    title: "Telecom and networking",
+    copy:
+      "AAA, RADIUS, RadSec, carrier offload, wireless, CBRS, LAN/WAN, VLANs, and network operations for connected field deployments.",
   },
   {
     icon: Database,
-    title: "Data systems",
+    title: "Data and deployment systems",
     copy:
-      "PostgreSQL, Kafka, ClickHouse, and Superset pipelines that turn infrastructure events into analytics and reporting.",
-  },
-  {
-    icon: Map,
-    title: "Geospatial deployment",
-    copy:
-      "Mapbox planning tools for venue mapping, coverage analysis, resource visibility, and field deployment strategy.",
+      "Kafka, ClickHouse, PostgreSQL, Superset, and Mapbox systems for analytics, reporting, venue mapping, and deployment planning.",
   },
 ];
 
@@ -78,43 +76,57 @@ const leadershipSignals = [
 
 const skillGroups = [
   {
+    title: "Electrical and test engineering",
+    skills: ["DC/AC testing", "Three-phase systems", "Residential electrical", "Systems integration"],
+  },
+  {
+    title: "Telecom and networking",
+    skills: ["AAA/RADIUS/RadSec", "Carrier offload", "Wireless", "CBRS", "LAN/WAN", "VLANs", "Network operations"],
+  },
+  {
+    title: "Backend and APIs",
+    skills: ["REST APIs", "APISIX", "Node.js", "Express.js", "Microservices", "API gateways", "JWT", "Keycloak"],
+  },
+  {
+    title: "Data and analytics",
+    skills: ["Kafka", "Kafka Connect", "ClickHouse", "Superset", "SQL/NoSQL", "Schema design", "Data modeling"],
+  },
+  {
+    title: "Frontend and tooling",
+    skills: ["React", "TypeScript", "JavaScript", "JSX", "Operator consoles", "Internal tools", "Analytics dashboards"],
+  },
+  {
+    title: "Systems and DevOps",
+    skills: ["Linux", "Docker", "VMs", "Bash", "Git", "GitLab", "CI/CD", "Jira", "Security"],
+  },
+  {
     title: "Leadership",
-    skills: ["Team leadership", "Product ownership", "Mentorship", "Cross-functional execution"],
-  },
-  {
-    title: "Software and infrastructure",
-    skills: ["Node.js", "TypeScript", "React", "Python", "REST APIs", "Docker", "Linux", "CI/CD"],
-  },
-  {
-    title: "Data platforms",
-    skills: ["PostgreSQL", "Kafka", "ClickHouse", "Superset", "Analytics", "Operational reporting"],
-  },
-  {
-    title: "Systems and networks",
-    skills: ["AAA/RADIUS", "RadSec", "CBRS", "LAN/WAN", "VLANs", "Embedded validation"],
+    skills: ["Team leadership", "Product ownership", "Technical documentation", "Cross-functional collaboration"],
   },
 ];
 
 const experience = [
   {
-    role: "Engineering Lead, Platform and Infrastructure",
+    role: "Engineering Lead, Platform & Infrastructure / Infrastructure Engineer",
     company: "XNET Inc.",
     period: "May 2024 - Present",
     icon: Radio,
     bullets: [
       "Lead four engineers building telecommunications infrastructure platforms across operator tooling, APIs, analytics, and deployment workflows.",
-      "Designed Node.js and TypeScript APIs for device onboarding, venue management, authentication, and operator workflows.",
-      "Built React, Mapbox, PostgreSQL, Kafka, and ClickHouse systems for operational intelligence and deployment planning.",
+      "Designed Node.js and TypeScript microservice APIs for resource management, authentication, and operator workflows.",
+      "Built the React and TypeScript XNET Operator Console for managing telecom operator deployments.",
+      "Built PostgreSQL-to-Kafka-to-ClickHouse pipelines and React/Mapbox geospatial tools for analytics, reporting, and deployment planning.",
     ],
   },
   {
-    role: "Lead Software Application Engineer",
+    role: "Application Support Engineer",
     company: "Bobcat Miner",
     period: "Oct 2021 - May 2023",
     icon: Network,
     bullets: [
-      "Led engineers supporting Linux-based IoT products with Docker, Bash, and network troubleshooting workflows.",
-      "Resolved CBRS, WAN/LAN, and device connectivity issues while building dashboards for product and support trends.",
+      "Led technical support for Linux-based IoT products using Docker, Bash, and network-diagnostic tools.",
+      "Troubleshot hardware, software, CBRS, WAN/LAN, and device connectivity failures affecting field deployments.",
+      "Partnered with engineering to identify recurring problems, improve field reliability, and expose product and support trends through dashboards.",
     ],
   },
   {
@@ -123,8 +135,20 @@ const experience = [
     period: "Feb 2019 - Sep 2021",
     icon: Cpu,
     bullets: [
-      "Led 15 technicians testing, troubleshooting, and validating more than 500,000 embedded and automation systems annually.",
-      "Built custom hardware/software test stations, C++ firmware workflows, and sensor validation systems for production readiness.",
+      "Performed electrical validation and fault isolation across DC circuits, AC systems, and three-phase systems.",
+      "Developed sensor-data validation tests to improve hardware and software reliability.",
+      "Led 15 technicians testing and troubleshooting more than 500,000 embedded systems annually.",
+    ],
+  },
+  {
+    role: "Self-Employed Handyman, Residential Electrical Maintenance",
+    company: "Orange County, CA",
+    period: "Apr 2017 - Dec 2018",
+    icon: Zap,
+    bullets: [
+      "Completed residential maintenance and repair projects with an emphasis on electrical troubleshooting.",
+      "Diagnosed faults and repaired lighting, switches, outlets, fixtures, and basic wiring systems.",
+      "Estimated materials, communicated with homeowners, and completed projects safely and on schedule.",
     ],
   },
 ];
@@ -202,7 +226,7 @@ function App() {
           </span>
           <span>
             <strong>Javier Ruiz</strong>
-            <small>Engineering Lead</small>
+            <small>Systems Engineer</small>
           </span>
         </a>
 
@@ -229,12 +253,12 @@ function App() {
 
           <div className="hero-inner">
             <div className="hero-content">
-              <p className="eyebrow">Engineering Lead | Full-Stack Platform and Infrastructure</p>
+              <p className="eyebrow">Systems Engineer | Software &amp; Electrical Engineering</p>
               <h1 id="hero-title">Javier Ruiz</h1>
               <p className="hero-copy">
-                I lead engineers through hard platform work: telecom operator tooling, backend
-                services, React products, deployment workflows, and data systems that make
-                real-world infrastructure easier to run.
+                I integrate software, electrical, telecom, and networked systems—from DC/AC
+                troubleshooting and embedded validation to React products, Node.js APIs, and
+                data platforms that make real-world infrastructure easier to run.
               </p>
 
               <div className="hero-actions" aria-label="Contact links">
@@ -273,7 +297,7 @@ function App() {
               />
               <div className="profile-caption">
                 <span>Meet Javier</span>
-                <strong>Engineering leader with hands-on systems depth.</strong>
+                <strong>Systems engineer with hands-on technical leadership depth.</strong>
               </div>
             </aside>
           </div>
@@ -296,9 +320,9 @@ function App() {
 
           <div className="intro-grid">
             <p className="intro-copy">
-              My strongest work sits where software, infrastructure, and field operations collide.
-              I can write the platform code, design the data path, unblock the network issue, and
-              still keep a team aligned around the business outcome.
+              My strongest work sits where software, electrical systems, infrastructure, and field
+              operations collide. I can write the platform code, design the data path, isolate the
+              electrical or network fault, and still keep a team aligned around the business outcome.
             </p>
 
             <div className="signal-grid">
@@ -316,7 +340,7 @@ function App() {
         <section className="section focus-band" id="systems" aria-labelledby="systems-title">
           <div className="section-heading">
             <p className="eyebrow">What I build</p>
-            <h2 id="systems-title">Platforms that make infrastructure visible and manageable.</h2>
+            <h2 id="systems-title">Integrated systems that work from power and hardware to platform and data.</h2>
           </div>
 
           <div className="focus-grid">
@@ -358,7 +382,7 @@ function App() {
         <section className="section skills-band" aria-labelledby="skills-title">
           <div className="section-heading">
             <p className="eyebrow">Proof of range</p>
-            <h2 id="skills-title">The stack spans product, platform, data, hardware, and networks.</h2>
+            <h2 id="skills-title">The toolkit spans electrical, software, data, telecom, and operations.</h2>
           </div>
 
           <div className="skills-grid">
@@ -437,10 +461,10 @@ function App() {
         <section className="contact-band" id="contact" aria-labelledby="contact-title">
           <div>
             <p className="eyebrow">Available for the right role</p>
-            <h2 id="contact-title">Engineering lead today. Software engineering manager next.</h2>
+            <h2 id="contact-title">Systems engineer today. Technical leader for what comes next.</h2>
             <p>
-              Based in California and ready to help teams build durable platforms, stronger delivery
-              habits, and the engineering foundation for future scale.
+              Based in California and ready to help teams integrate software, electrical, network,
+              and data systems while building stronger delivery habits for future scale.
             </p>
           </div>
 
@@ -465,7 +489,7 @@ function App() {
         </span>
         <span>
           <Code2 aria-hidden="true" />
-          Platform, infrastructure, and engineering leadership
+          Software, electrical, telecom, and engineering leadership
         </span>
       </footer>
 
