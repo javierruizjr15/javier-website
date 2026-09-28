@@ -28,16 +28,16 @@ const metrics = [
 
 const focusAreas = [
   {
-    icon: Zap,
-    title: "Electrical and test engineering",
-    copy:
-      "Hands-on validation and fault isolation across DC, single-phase AC, three-phase power, sensors, embedded systems, and residential electrical work.",
-  },
-  {
     icon: Server,
     title: "Software platforms",
     copy:
       "React and TypeScript operator consoles, internal tools, analytics dashboards, and Node.js microservices that support real-world operations.",
+  },
+  {
+    icon: Zap,
+    title: "Electrical and test engineering",
+    copy:
+      "Hands-on validation and fault isolation across DC, single-phase AC, three-phase power, sensors, embedded systems, and residential electrical work.",
   },
   {
     icon: Radio,
@@ -76,12 +76,8 @@ const leadershipSignals = [
 
 const skillGroups = [
   {
-    title: "Electrical and test engineering",
-    skills: ["DC/AC testing", "Three-phase systems", "Residential electrical", "Systems integration"],
-  },
-  {
-    title: "Telecom and networking",
-    skills: ["AAA/RADIUS/RadSec", "Carrier offload", "Wireless", "CBRS", "LAN/WAN", "VLANs", "Network operations"],
+    title: "Frontend and tooling",
+    skills: ["React", "TypeScript", "JavaScript", "JSX", "Operator consoles", "Internal tools", "Analytics dashboards"],
   },
   {
     title: "Backend and APIs",
@@ -92,12 +88,16 @@ const skillGroups = [
     skills: ["Kafka", "Kafka Connect", "ClickHouse", "Superset", "SQL/NoSQL", "Schema design", "Data modeling"],
   },
   {
-    title: "Frontend and tooling",
-    skills: ["React", "TypeScript", "JavaScript", "JSX", "Operator consoles", "Internal tools", "Analytics dashboards"],
-  },
-  {
     title: "Systems and DevOps",
     skills: ["Linux", "Docker", "VMs", "Bash", "Git", "GitLab", "CI/CD", "Jira", "Security"],
+  },
+  {
+    title: "Telecom and networking",
+    skills: ["AAA/RADIUS/RadSec", "Carrier offload", "Wireless", "CBRS", "LAN/WAN", "VLANs", "Network operations"],
+  },
+  {
+    title: "Electrical and test engineering",
+    skills: ["DC/AC testing", "Three-phase systems", "Residential electrical", "Systems integration"],
   },
   {
     title: "Leadership",
